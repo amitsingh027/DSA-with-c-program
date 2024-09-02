@@ -21,6 +21,33 @@ int main() {
 */
 
 
+/*
+//another method
+#include <bits/stdc++.h>
+using namespace std;
+
+int countDigits(int n){
+    
+    int cnt = 0;
+while (n>0)
+{
+    cnt = cnt +1;
+    n = n/10;
+}
+
+    
+    return cnt;
+}
+int main() {
+    int N ;
+    cin>>N;
+    cout << "N: "<< N << endl;
+    int digits = countDigits(N);
+    cout << "Number of Digits in N: "<< digits << endl;
+    return 0;
+}
+*/
+
 
 
 
@@ -175,3 +202,30 @@ int main() {
     return 0;
 }
 */
+
+//method 2
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+  int  dup = n;
+
+   int sum = 0;
+
+    while (n > 0) {
+        int ld = n % 10;
+       sum = sum + (ld*ld*ld);
+        n = n / 10;
+    }
+    if (sum == dup) cout << "is an armstrong number";
+    
+     else cout << "is not an armstrong number";
+
+
+
+
+    return 0;
+}
