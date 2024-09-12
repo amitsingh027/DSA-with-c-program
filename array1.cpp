@@ -138,14 +138,14 @@ int main() {
 #include <iostream>
 using namespace std;
 
-void Reverse(int arr[], int start, int end)
+void Reverse(int arr[], int i, int end)
 {
-  while (start <= end)
+  while (i <= end)
   {
-    int temp = arr[start];
-    arr[start] = arr[end];
+    int temp = arr[i];
+    arr[i] = arr[end];
     arr[end] = temp;
-    start++;
+    i++;
     end--;
   }
 }
@@ -270,3 +270,35 @@ int main() {
 */
 
 
+
+
+
+
+/*
+//count subarray sum equals k
+//Given an array of integers and an integer k, return the total number of subarrays whose sum equals k.
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int CountSubarrays(vector<int>& arr, int k) {
+    int answer = 0;
+    for (int i = 0; i < arr.size(); ++i) {
+        int sum = 0;
+        for (int end = i; end < arr.size(); ++end) {
+            sum += arr[end];
+            if (sum == k) {
+                ++answer;
+            }
+        }
+    }
+    return answer;
+}
+
+int main() {
+    vector<int> arr = {3, 4, 7, 2, 1, 8, 5};
+    int k = 7;
+    cout << "Number of subarrays with sum " << k << ": " << CountSubarrays(arr, k) << endl;
+    return 0;
+}
+*/
