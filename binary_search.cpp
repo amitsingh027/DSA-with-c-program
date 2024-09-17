@@ -92,7 +92,7 @@ int main()
 
 
 
-
+/*
 //implement upper bound
 #include <bits/stdc++.h>
 using namespace std;
@@ -112,4 +112,69 @@ int main()
     cout << "The upper bound is the index: " << ind << "\n";
     return 0;
 }
+*/
+
+
+
+
+
+/*
+//search insert position
+#include <bits/stdc++.h>
+using namespace std;
+int searchInsert(vector<int>& arr, int x) {
+    int n = arr.size();
+    int low = 0, high = n - 1;
+    int ans = n;
+
+    while (low <= high) {
+        int mid = (low + high) / 2;
+     
+        if (arr[mid] >= x) {
+            ans = mid;
+            high = mid - 1;
+        }
+        else {
+            low = mid + 1; 
+        }
+    }
+    return ans;
+}
+int main()
+{
+    vector<int> arr = {1, 2, 4, 5};
+    int x = 6;
+    int ind = searchInsert(arr, x);
+    cout << "The index is: " << ind << "\n";
+    return 0;
+}
+*/
+
+
+
+
+
+//last occurance in a sorted array
+#include<bits/stdc++.h>
+using namespace std;
+int solve(int n, int target, vector < int > & v) {
+  int res = -1;
+  for (int i = n - 1; i >= 0; i--) {
+    if (v[i] == target) {
+      res = i;
+      break;
+    }
+  }
+  return res;
+}
+int main() {
+  int n = 7;
+  int target= 13;
+  vector < int > v = {3,4,13,13,13,20,40};
+  cout << solve(n, target, v) << "\n";
+  return 0;
+}
+
+
+
 
